@@ -10,7 +10,7 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
   "test/integration/microposts_interface_test.rb"]
  end
  watch(%r{^test/fixtures/(.*?)\.yml$}) do |matches|
- "test/models/#{matches[1].singularize}_test.rb"
+  "test/models/#{matches[1].singularize}_test.rb"
  end
  watch(%r{^app/mailers/(.*?)\.rb$}) do |matches|
   "test/mailers/#{matches[1]}_test.rb"
@@ -46,6 +46,7 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
   ['test/integration/microposts_interface_test.rb']
  end
 end
+
   # Returns the integration tests corresponding to the given resource.
 def integration_tests(resource = :all)
   if resource == :all
